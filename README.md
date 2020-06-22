@@ -23,6 +23,12 @@ using uv::{
 }
 ```
 
+
+## Version
+
+The version of this module maps directly to the version of libuv used by
+this module.
+
 ## License
 
 MIT
