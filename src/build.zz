@@ -1,0 +1,20 @@
+using <unistd.h>::{ getcwd }
+using <stdio.h>::{ stdout, sprintf, fclose }
+using <stdlib.h>::{ exit, system }
+using string
+using string::{ String }
+using log
+
+macro build() {
+  new+1024 mut cwd = string::make();
+  new+64000 mut command = string::make();
+
+  getcwd(cwd.mem, sizeof(cwd));
+  fclose(stdout);
+  command.format("make -C %s libuv", cwd.cstr());
+  exit(system(command.cstr()));
+}
+
+fn init() {
+  @build()
+}
