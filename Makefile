@@ -31,7 +31,9 @@ CWD ?= $(shell pwd)
 
 build: libuv
 
-libuv: target/lib/libuv.a
+libuv: libuv/libuv.pc target/lib/libuv.a
+libuv/libuv.pc:
+	git submodule update --init
 
 target/lib/libuv.a:
 	mkdir -p target
