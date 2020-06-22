@@ -1,0 +1,737 @@
+// error enum types
+using uv::{
+  UV_E2BIG,
+  UV_EACCES,
+  UV_EADDRINUSE,
+  UV_EADDRNOTAVAIL,
+  UV_EAFNOSUPPORT,
+  UV_EAGAIN,
+  UV_EAI_ADDRFAMILY,
+  UV_EAI_AGAIN,
+  UV_EAI_BADFLAGS,
+  UV_EAI_BADHINTS,
+  UV_EAI_CANCELED,
+  UV_EAI_FAIL,
+  UV_EAI_FAMILY,
+  UV_EAI_MEMORY,
+  UV_EAI_NODATA,
+  UV_EAI_NONAME,
+  UV_EAI_OVERFLOW,
+  UV_EAI_PROTOCOL,
+  UV_EAI_SERVICE,
+  UV_EAI_SOCKTYPE,
+  UV_EALREADY,
+  UV_EBADF,
+  UV_EBUSY,
+  UV_ECANCELED,
+  UV_ECHARSET,
+  UV_ECONNABORTED,
+  UV_ECONNREFUSED,
+  UV_ECONNRESET,
+  UV_EDESTADDRREQ,
+  UV_EEXIST,
+  UV_EFAULT,
+  UV_EFBIG,
+  UV_EHOSTUNREACH,
+  UV_EINTR,
+  UV_EINVAL,
+  UV_EIO,
+  UV_EISCONN,
+  UV_EISDIR,
+  UV_ELOOP,
+  UV_EMFILE,
+  UV_EMSGSIZE,
+  UV_ENAMETOOLONG,
+  UV_ENETDOWN,
+  UV_ENETUNREACH,
+  UV_ENFILE,
+  UV_ENOBUFS,
+  UV_ENODEV,
+  UV_ENOENT,
+  UV_ENOMEM,
+  UV_ENONET,
+  UV_ENOPROTOOPT,
+  UV_ENOSPC,
+  UV_ENOSYS,
+  UV_ENOTCONN,
+  UV_ENOTDIR,
+  UV_ENOTEMPTY,
+  UV_ENOTSOCK,
+  UV_ENOTSUP,
+  UV_EPERM,
+  UV_EPIPE,
+  UV_EPROTO,
+  UV_EPROTONOSUPPORT,
+  UV_EPROTOTYPE,
+  UV_ERANGE,
+  UV_EROFS,
+  UV_ESHUTDOWN,
+  UV_ESPIPE,
+  UV_ESRCH,
+  UV_ETIMEDOUT,
+  UV_ETXTBSY,
+  UV_EXDEV,
+  UV_UNKNOWN,
+  UV_EOF,
+  UV_ENXIO,
+  UV_EMLINK,
+  UV_EHOSTDOWN,
+  UV_EREMOTEIO,
+  UV_ENOTTY,
+  UV_EFTYPE,
+  UV_EILSEQ,
+}
+
+// handle enum types
+using uv::{
+  UV_ASYNC,
+  UV_CHECK,
+  UV_FS_EVENT,
+  UV_FS_POLL,
+  UV_HANDLE,
+  UV_IDLE,
+  UV_NAMED_PIPE,
+  UV_POLL,
+  UV_PREPARE,
+  UV_PROCESS,
+  UV_STREAM,
+  UV_TCP,
+  UV_TIMER,
+  UV_TTY,
+  UV_UDP,
+  UV_SIGNAL,
+}
+
+// request enum types
+using uv::{
+  UV_REQ,
+  UV_CONNECT,
+  UV_WRITE,
+  UV_SHUTDOWN,
+  UV_UDP_SEND,
+  UV_FS,
+  UV_WORK,
+  UV_GETADDRINFO,
+  UV_GETNAMEINFO,
+  UV_RANDOM,
+}
+
+// membership enum types
+using uv::{
+  UV_LEAVE_GROUP,
+  UV_JOIN_GROUP
+}
+
+// handle types
+using uv::{
+  uv_loop_t,
+  uv_handle_t,
+  uv_dir_t,
+  uv_stream_t,
+  uv_tcp_t,
+  uv_udp_t,
+  uv_pipe_t,
+  uv_tty_t,
+  uv_poll_t,
+  uv_timer_t,
+  uv_prepare_t,
+  uv_check_t,
+  uv_idle_t,
+  uv_async_t,
+  uv_process_t,
+  uv_fs_event_t,
+  uv_fs_poll_t,
+  uv_signal_t,
+}
+
+// request types
+using uv::{
+  uv_req_t,
+  uv_getaddrinfo_t,
+  uv_getnameinfo_t,
+  uv_shutdown_t,
+  uv_write_t,
+  uv_connect_t,
+  uv_udp_send_t,
+  uv_fs_t,
+  uv_work_t,
+  uv_random_t,
+}
+
+// misc types
+using uv::{
+  uv_env_item_t,
+  uv_cpu_info_t,
+  uv_interface_address_t,
+  uv_dirent_t,
+  uv_passwd_t,
+  uv_utsname_t,
+  uv_statfs_t,
+  uv_stat_t,
+}
+
+// timespec type
+using uv::{
+  uv_timespec_t,
+}
+
+// enum types
+using uv::{
+  uv_loop_option,
+  uv_run_mode,
+  uv_membership,
+  uv_errno_t,
+  uv_handle_type,
+  uv_req_type,
+  uv_tcp_flags,
+  uv_udp_flags,
+  uv_tty_mode_t,
+  uv_tty_vtermstate_t,
+  uv_poll_event,
+  uv_stdio_flags,
+  uv_process_flags,
+  uv_dirent_type_t,
+  uv_fs_type,
+  uv_fs_event,
+  uv_fs_event_flags,
+  uv_thread_create_flags,
+}
+
+// version functions
+using uv::{
+  uv_version,
+  uv_version_string,
+}
+
+// library functions
+using uv::{
+  uv_library_shutdown,
+  uv_replace_allocator,
+}
+
+// callback types
+using uv::{
+  uv_fs_event_cb,
+  uv_fs_poll_cb,
+  uv_signal_cb,
+  uv_alloc_cb,
+  uv_write_cb,
+  uv_connect_cb,
+  uv_shutdown_cb,
+  uv_connection_cb,
+  uv_close_cb,
+  uv_poll_cb,
+  uv_timer_cb,
+  uv_async_cb,
+  uv_prepare_cb,
+  uv_check_cb,
+  uv_idle_cb,
+  uv_exit_cb,
+  uv_walk_cb,
+  uv_fs_cb,
+  uv_work_cb,
+  uv_after_work_cb,
+  uv_getaddrinfo_cb,
+  uv_getnameinfo_cb,
+  uv_random_cb,
+  uv_udp_send_cb,
+  uv_udp_recv_cb,
+  uv_thread_cb
+}
+
+// macros
+using uv::{
+  UV_REQ_FIELDS,
+  UV_HANDLE_FIELDS,
+  UV_STREAM_FIELDS,
+}
+
+// loop functions
+using uv::{
+  uv_default_loop,
+  uv_loop_init,
+  uv_loop_close,
+  uv_loop_size,
+  uv_loop_alive,
+  uv_loop_configure,
+  uv_loop_fork,
+  uv_walk,
+  uv_loop_get_data,
+  uv_loop_set_data,
+}
+
+// loop runtime functions
+using uv::{
+  uv_run,
+  uv_stop,
+}
+
+// handle functions
+using uv::{
+  uv_ref,
+  uv_unref,
+  uv_has_ref,
+  uv_is_active,
+  uv_handle_size,
+  uv_handle_get_type,
+  uv_handle_type_name,
+  uv_handle_get_data,
+  uv_handle_get_loop,
+  uv_handle_set_data,
+  uv_close,
+  uv_send_buffer_size,
+  uv_recv_buffer_size,
+  uv_fileno,
+  uv_shutdown,
+}
+
+// time functions
+using uv::{
+  uv_update_time,
+  uv_now,
+  uv_gettimeofday,
+}
+
+// backend functions
+using uv::{
+  uv_backend_fd,
+  uv_backend_timeout,
+}
+
+// error functions
+using uv::{
+  uv_translate_sys_error,
+  uv_strerror,
+  uv_strerror_r,
+  uv_err_name,
+  uv_err_name_r,
+}
+
+// request functions
+using uv::{
+  uv_req_size,
+  uv_req_get_data,
+  uv_req_set_data,
+  uv_req_get_type,
+  uv_req_type_name,
+}
+
+// buffer functions
+using uv::{
+  uv_buf_init
+}
+
+// stream functions
+using uv::{
+  uv_stream_get_write_queue_size,
+  uv_listen,
+  uv_accept,
+  uv_read_start,
+  uv_read_stop,
+  uv_write,
+  uv_write2,
+  uv_try_write,
+  uv_is_readable,
+  uv_is_writable,
+  uv_stream_set_blocking,
+  uv_is_closing,
+}
+
+// tcp API
+using uv::{
+  UV_TCP_IPV6ONLY,
+  uv_tcp_init,
+  uv_tcp_init_ex,
+  uv_tcp_open,
+  uv_tcp_nodelay,
+  uv_tcp_keepalive,
+  uv_tcp_simultaneous_accepts,
+  uv_tcp_bind,
+  uv_tcp_getsockname,
+  uv_tcp_getpeername,
+  uv_tcp_close_reset,
+  uv_tcp_connect,
+}
+
+// udp API
+using uv::{
+  UV_UDP_IPV6ONLY,
+  UV_UDP_PARTIAL,
+  UV_UDP_REUSEADDR,
+  UV_UDP_MMSG_CHUNK,
+  UV_UDP_RECVMMSG,
+  uv_udp_init,
+  uv_udp_init_ex,
+  uv_udp_open,
+  uv_udp_bind,
+  uv_udp_connect,
+  uv_udp_getpeername,
+  uv_udp_getsockname,
+  uv_udp_set_membership,
+  uv_udp_set_source_membership,
+  uv_udp_set_multicast_loop,
+  uv_udp_set_multicast_ttl,
+  uv_udp_set_multicast_interface,
+  uv_udp_set_broadcast,
+  uv_udp_set_ttl,
+  uv_udp_send,
+  uv_udp_try_send,
+  uv_udp_recv_start,
+  uv_udp_recv_stop,
+  uv_udp_get_send_queue_size,
+  uv_udp_get_send_queue_count,
+}
+
+// tty API
+using uv::{
+  UV_TTY_MODE_NORMAL,
+  UV_TTY_MODE_RAW,
+  UV_TTY_MODE_IO,
+  uv_tty_init,
+  uv_tty_set_mode,
+  uv_tty_reset_mode,
+  uv_tty_get_winsize,
+  uv_tty_set_vterm_state,
+  uv_tty_get_vterm_state,
+}
+
+// pipe API
+using uv::{
+  uv_pipe_init,
+  uv_pipe_open,
+  uv_pipe_bind,
+  uv_pipe_connect,
+  uv_pipe_getsockname,
+  uv_pipe_getpeername,
+  uv_pipe_pending_instances,
+  uv_pipe_pending_count,
+  uv_pipe_pending_type,
+  uv_pipe_chmod,
+}
+
+// poll API
+using uv::{
+  UV_READABLE,
+  UV_WRITABLE,
+  UV_DISCONNECT,
+  UV_PRIORITIZED,
+  uv_poll_init,
+  uv_poll_init_socket,
+  uv_poll_start,
+  uv_poll_stop,
+}
+
+// prepare API
+using uv::{
+  uv_prepare_init,
+  uv_prepare_start,
+  uv_prepare_stop,
+}
+
+// check API
+using uv::{
+  uv_check_init,
+  uv_check_start,
+  uv_check_stop,
+}
+
+// idle API
+using uv::{
+  uv_idle_init,
+  uv_idle_start,
+  uv_idle_stop,
+}
+
+// async API
+using uv::{
+  uv_async_init,
+  uv_async_send,
+}
+
+// timer API
+using uv::{
+  uv_timer_init,
+  uv_timer_start,
+  uv_timer_stop,
+  uv_timer_again,
+  uv_timer_set_repeat,
+  uv_timer_get_repeat,
+}
+
+// getaddrinfo/getnameinfo API
+using uv::{
+  uv_getaddrinfo,
+  uv_freeaddrinfo,
+  uv_getnameinfo,
+}
+
+// child process API
+using uv::{
+  UV_IGNORE,
+  UV_CREATE_PIPE,
+  UV_INHERIT_FD,
+  UV_INHERIT_STREAM,
+  UV_WRITABLE_PIPE,
+  UV_READABLE_PIPE,
+  UV_OVERLAPPED_PIPE,
+
+  UV_PROCESS_SETUID,
+  UV_PROCESS_SETGID,
+  UV_PROCESS_WINDOWS_VERBATIM_ARGUMENTS,
+  UV_PROCESS_DETACHED,
+  UV_PROCESS_WINDOWS_HIDE,
+  UV_PROCESS_WINDOWS_HIDE_CONSOLE,
+  UV_PROCESS_WINDOWS_HIDE_GUI,
+
+  uv_stdio_container_t,
+  uv_process_options_t,
+
+  uv_spawn,
+  uv_process_kill,
+  uv_kill,
+  uv_process_get_pid,
+}
+
+// work  API
+using uv::{
+  uv_queue_work,
+  uv_cancel,
+}
+
+// runtime process API
+using uv::{
+  uv_setup_args,
+  uv_get_process_title,
+  uv_set_process_title,
+  uv_resident_set_memory,
+  uv_uptime,
+  uv_get_osfhandle,
+  uv_open_osfhandle,
+  uv_getrusage,
+  uv_exepath,
+  uv_cwd,
+  uv_chdir,
+  uv_get_free_memory,
+  uv_get_total_memory,
+  uv_get_constrained_memory,
+  uv_hrtime,
+  uv_sleep,
+  uv_disable_stdio_inheritance,
+}
+
+// OS API
+using uv::{
+  UV_PRIORITY_LOW,
+  UV_PRIORITY_BELOW_NORMAL,
+  UV_PRIORITY_NORMAL,
+  UV_PRIORITY_ABOVE_NORMAL,
+  UV_PRIORITY_HIGH,
+  UV_PRIORITY_HIGHEST,
+  UV_MAXHOSTNAMESIZE,
+
+  uv_os_homedir,
+  uv_os_tmpdir,
+  uv_os_get_passwd,
+  uv_os_free_passwd,
+  uv_os_getpid,
+  uv_os_getppid,
+  uv_os_getpriority,
+  uv_os_setpriority,
+  uv_interface_addresses,
+  uv_free_interface_addresses,
+  uv_os_environ,
+  uv_os_free_environ,
+  uv_os_getenv,
+  uv_os_setenv,
+  uv_os_unsetenv,
+  uv_os_gethostname,
+  uv_os_uname,
+}
+
+// CPU API
+using uv::{
+  uv_cpu_info,
+  uv_free_cpu_info,
+}
+
+// fs API
+using uv::{
+  UV_FS_UNKNOWN,
+  UV_FS_CUSTOM,
+  UV_FS_OPEN,
+  UV_FS_CLOSE,
+  UV_FS_READ,
+  UV_FS_WRITE,
+  UV_FS_SENDFILE,
+  UV_FS_STAT,
+  UV_FS_LSTAT,
+  UV_FS_FSTAT,
+  UV_FS_FTRUNCATE,
+  UV_FS_UTIME,
+  UV_FS_FUTIME,
+  UV_FS_ACCESS,
+  UV_FS_CHMOD,
+  UV_FS_FCHMOD,
+  UV_FS_FSYNC,
+  UV_FS_FDATASYNC,
+  UV_FS_UNLINK,
+  UV_FS_RMDIR,
+  UV_FS_MKDIR,
+  UV_FS_MKDTEMP,
+  UV_FS_RENAME,
+  UV_FS_SCANDIR,
+  UV_FS_LINK,
+  UV_FS_SYMLINK,
+  UV_FS_READLINK,
+  UV_FS_CHOWN,
+  UV_FS_FCHOWN,
+  UV_FS_REALPATH,
+  UV_FS_COPYFILE,
+  UV_FS_LCHOWN,
+  UV_FS_OPENDIR,
+  UV_FS_READDIR,
+  UV_FS_CLOSEDIR,
+  UV_FS_STATFS,
+  UV_FS_MKSTEMP,
+  UV_FS_LUTIME,
+  UV_FS_COPYFILE_EXCL,
+  UV_FS_COPYFILE_FICLONE,
+  UV_FS_COPYFILE_FICLONE_FORCE,
+  UV_FS_SYMLINK_DIR,
+  UV_FS_SYMLINK_JUNCTION,
+  UV_RENAME,
+  UV_CHANGE,
+  UV_FS_EVENT_WATCH_ENTRY,
+  UV_FS_EVENT_STAT,
+  UV_FS_EVENT_RECURSIVE,
+
+  uv_guess_handle,
+
+  uv_fs_get_type,
+  uv_fs_get_result,
+  uv_fs_get_system_error,
+  uv_fs_get_ptr,
+  uv_fs_get_path,
+  uv_fs_get_statbuf,
+  uv_fs_req_cleanup,
+  uv_fs_close,
+  uv_fs_open,
+  uv_fs_read,
+  uv_fs_unlink,
+  uv_fs_write,
+  uv_fs_copyfile,
+  uv_fs_mkdir,
+  uv_fs_mkdtemp,
+  uv_fs_mkstemp,
+  uv_fs_rmdir,
+  uv_fs_scandir,
+  uv_fs_scandir_next,
+  uv_fs_opendir,
+  uv_fs_readdir,
+  uv_fs_closedir,
+  uv_fs_stat,
+  uv_fs_fstat,
+  uv_fs_rename,
+  uv_fs_fsync,
+  uv_fs_fdatasync,
+  uv_fs_ftruncate,
+  uv_fs_sendfile,
+  uv_fs_access,
+  uv_fs_chmod,
+  uv_fs_utime,
+  uv_fs_futime,
+  uv_fs_lutime,
+  uv_fs_lstat,
+  uv_fs_link,
+  uv_fs_symlink,
+  uv_fs_readlink,
+  uv_fs_realpath,
+  uv_fs_fchmod,
+  uv_fs_chown,
+  uv_fs_fchown,
+  uv_fs_lchown,
+  uv_fs_statfs,
+  uv_fs_poll_init,
+  uv_fs_poll_start,
+  uv_fs_poll_stop,
+  uv_fs_poll_getpath,
+  uv_fs_event_init,
+  uv_fs_event_start,
+  uv_fs_event_stop,
+  uv_fs_event_getpath,
+}
+
+// signal API
+using uv::{
+  uv_signal_init,
+  uv_signal_start,
+  uv_signal_start_oneshot,
+  uv_signal_stop,
+}
+
+// network utils API
+using uv::{
+  UV_IF_NAMESIZE,
+  uv_ip4_addr,
+  uv_ip6_addr,
+  uv_ip4_name,
+  uv_ip6_name,
+  uv_inet_ntop,
+  uv_inet_pton,
+  uv_if_indextoname,
+  uv_if_indextoiid,
+}
+
+// shared object (DL/LD) API
+using uv::{
+  uv_dlopen,
+  uv_dlclose,
+  uv_dlsym,
+  uv_dlerror,
+}
+
+// thread API
+using uv::{
+  UV_THREAD_NO_FLAGS,
+  UV_THREAD_HAS_STACK_SIZE,
+  uv_mutex_init,
+  uv_mutex_init_recursive,
+  uv_mutex_destroy,
+  uv_mutex_lock,
+  uv_mutex_trylock,
+  uv_mutex_unlock,
+  uv_rwlock_init,
+  uv_rwlock_destroy,
+  uv_rwlock_rdlock,
+  uv_rwlock_tryrdlock,
+  uv_rwlock_rdunlock,
+  uv_rwlock_wrlock,
+  uv_rwlock_trywrlock,
+  uv_rwlock_wrunlock,
+  uv_sem_init,
+  uv_sem_destroy,
+  uv_sem_post,
+  uv_sem_wait,
+  uv_sem_trywait,
+  uv_cond_init,
+  uv_cond_destroy,
+  uv_cond_signal,
+  uv_cond_broadcast,
+  uv_barrier_init,
+  uv_barrier_destroy,
+  uv_barrier_wait,
+  uv_cond_wait,
+  uv_cond_timedwait,
+  uv_once,
+  uv_thread_create,
+  uv_thread_options_t,
+  uv_thread_create_ex,
+  uv_thread_self,
+  uv_thread_join,
+  uv_thread_equal,
+}
+
+fn main() -> int {
+  uv_default_loop();
+  return 0;
+}

@@ -1,0 +1,20 @@
+[project]
+version = "0.1.0"
+name = "uv"
+cincludes = []
+cobjects = []
+pkgconfig = ["libuv/libuv.pc"]
+cflags = []
+lflags = []
+
+[variants]
+default = []
+
+[dependencies]
+err = "*"
+hex = "*"
+log = "*"
+mem = "*"
+slice = "*"
+
+[repos]
