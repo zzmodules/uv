@@ -37,7 +37,7 @@ target/lib/libuv.a:
 	mkdir -p target
 	cd libuv && \
 	sh ./autogen.sh && \
-	CFLAGS=-fPIC configure --disable-shared --prefix=$(CWD)/target && \
+	CFLAGS=-fPIC ./configure --disable-shared --prefix=$(CWD)/target && \
 	make && \
 	make install && \
 	find $(CWD)/target/include/uv *.h -type f | xargs sed 's/uv\//.\//g' -i
