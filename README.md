@@ -1,7 +1,7 @@
 uv
 ==
 
-> ZZ Bindings for libuv
+> libuv bindings for [ZZ][zz].
 
 ## Installation
 
@@ -32,3 +32,5 @@ this module.
 ## License
 
 MIT
+
+[zz]: https://github.com/zetzit/zz
