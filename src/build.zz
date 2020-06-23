@@ -1,23 +1,23 @@
-using <stdio.h>::{ stdout, sprintf, fclose }
+using <stdio.h>::{ stdout, fclose }
 using <stdlib.h>::{ exit, system }
-using <unistd.h>::{ getcwd, readlink }
 using <libgen.h>::{ dirname }
 using string
-using string::{ String }
 using log
+using mem
 
-macro build() {
-  new+64000 mut command = string::make();
-  new+1024 mut execpath = string::make();
-
-  let mut ptr = as<char mut *>(execpath.cstr());
-  readlink("/proc/self/exe", ptr, sizeof(execpath));
+export macro init() {
   fclose(stdout);
-  command.format("make -C %s/../.. libuv", dirname(ptr));
-  log::info("will execute %s", command.cstr());
-  exit(system(command.cstr()));
-}
 
-fn init() {
-  @build();
+  new+4096 command = string::make();
+  new+4096 filename = string::make();
+  new+4096 directory = string::make();
+
+  filename.format("%s", unsafe<char *>(__FILE__));
+  directory.format("%s", dirname(as<char mut *>(filename.cstr())));
+  directory.format("%s", dirname(as<char mut *>(directory.cstr())));
+  command.format("make libuv -C %s", directory.cstr());
+
+  log::info("will execute %s", command.cstr());
+
+  exit(system(command.cstr()));
 }

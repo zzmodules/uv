@@ -1,5 +1,9 @@
 using build
 
+fn init() {
+  @build::init();
+}
+
 // error enum types
 export using <uv.h>::{
   UV_E2BIG,
