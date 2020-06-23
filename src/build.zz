@@ -1,17 +1,20 @@
 using <stdio.h>::{ stdout, sprintf, fclose }
 using <stdlib.h>::{ exit, system }
-using <unistd.h>::{ getcwd }
+using <unistd.h>::{ getcwd, readlink }
+using <libgen.h>::{ dirname }
 using string
 using string::{ String }
 using log
 
 macro build() {
-  new+1024 mut cwd = string::make();
   new+64000 mut command = string::make();
+  new+1024 mut execpath = string::make();
 
-  getcwd(cwd.mem, sizeof(cwd));
+  let mut ptr = as<char mut *>(execpath.cstr());
+  readlink("/proc/self/exe", ptr, sizeof(execpath));
   fclose(stdout);
-  command.format("make -C %s libuv", cwd.cstr());
+  command.format("make -C %s/../.. libuv", dirname(ptr));
+  log::info("will execute %s", command.cstr());
   exit(system(command.cstr()));
 }
 
