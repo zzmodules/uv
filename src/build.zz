@@ -1,10 +1,9 @@
-using <unistd.h>::{ getcwd }
 using <stdio.h>::{ stdout, sprintf, fclose }
 using <stdlib.h>::{ exit, system }
+using <unistd.h>::{ getcwd }
 using string
 using string::{ String }
 using log
-
 
 macro build() {
   new+1024 mut cwd = string::make();
@@ -17,5 +16,5 @@ macro build() {
 }
 
 fn init() {
-  @build()
+  @build();
 }

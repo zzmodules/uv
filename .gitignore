@@ -4,3 +4,4 @@ vgcore.*
 **/*.o
 **/*.parsecache
 **/*.buildcache
+libuv.pc

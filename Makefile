@@ -43,6 +43,7 @@ target/lib/libuv.a:
 		CFLAGS=-fPIC ./configure --disable-shared --prefix=$(CWD)/target && \
 		make && \
 		make install && \
+		cp -f $(CWD)/target/lib/pkgconfig/libuv.pc $(CWD)/libuv.pc && \
 		find $(CWD)/target/include/uv/**.h -type f | xargs sed 's/uv\//.\//g' -i; \
 	} >&2
 

@@ -3,7 +3,7 @@ version = "1.38.0"
 name = "uv"
 cincludes = []
 cobjects = []
-pkgconfig = ["libuv/libuv.pc"]
+pkgconfig = ["libuv.pc"]
 cflags = []
 lflags = []
 
